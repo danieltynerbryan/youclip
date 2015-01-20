@@ -1,6 +1,6 @@
 # YouClip
 
-A simple editor for Youtube videos.
+A simple editor for Youtube videos. Currently deployed on Heroku at youclip.herokuapp.com
 
 ## Requirements
 
