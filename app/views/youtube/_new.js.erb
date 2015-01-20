@@ -1,0 +1,42 @@
+<%= javascript_tag do %>
+	
+	function playClip(){
+	    range = $('#range-slider').val().split(',');
+	    $("#clip_start").val(range[0]);
+	    $("#clip_end").val(range[1]);
+	    player.loadVideoById({
+			videoId:'<%= @clip.youtube_id %>', 
+			startSeconds:range[0], 
+			endSeconds:range[1]
+		});
+    }
+
+	function onPlayerReady(event){
+        player.setPlaybackQuality('hd720');
+        videoLength = event.target.getDuration();
+        $('#range-slider').val(videoLength);
+        scaleArray = new Array;
+        for ( var i = 0; i <= videoLength; i=i+30 ) {
+	        var minutes = Math.floor(i / 60);
+	        var seconds = i - minutes * 60;
+	        if (seconds == 0) {
+		        seconds = '00';
+	        }
+	        scaleArray.push(minutes+':'+seconds);
+	    }
+        $('.range-slider').jRange({
+		    from: 0,
+		    to: videoLength,
+		    step: 1,
+		    scale: scaleArray,
+		    format: '%s',
+		    width: '100%',
+		    showLabels: true,
+		    isRange: true
+		});
+		event.target.loadVideoById({
+			videoId:'<%= @clip.youtube_id %>'
+		});
+    }
+	
+<% end %>
