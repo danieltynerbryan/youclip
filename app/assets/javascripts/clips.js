@@ -6,7 +6,7 @@ $(document).ready(function(){
 		match = videoURL.match(regExp);
 		videoID = match[7];
 		if (videoID != '') {
-			window.location.href = 'youtube/'+videoID;
+			window.location.href = '/youtube/'+videoID;
 		}
 	})
 
