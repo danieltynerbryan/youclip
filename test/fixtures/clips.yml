@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  youtube_id: MyString
+  start: 1.5
+  end: 1.5
+
+two:
+  youtube_id: MyString
+  start: 1.5
+  end: 1.5

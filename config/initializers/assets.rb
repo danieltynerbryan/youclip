@@ -1,0 +1,48 @@
+# Be sure to restart your server when you modify this file.
+
+# Version of your assets, change this if you want to expire all your assets.
+Rails.application.config.assets.version = '1.0'
+
+# Precompile additional assets.
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+# Rails.application.config.assets.precompile += %w( search.js )
+
+Rails.application.config.assets.precompile += %w( glyphicons-halflings.png )
+Rails.application.config.assets.precompile += %w( glyphicons-halflings-white.png )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-16.woff )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-16.eot )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-16.ttf )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-24.woff )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-24.eot )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-24.ttf )
+Rails.application.config.assets.precompile += %w( Flat-UI-Icons-24.svg )
+Rails.application.config.assets.precompile += %w( checkbox.png )
+Rails.application.config.assets.precompile += %w( radio.png )
+Rails.application.config.assets.precompile += %w( checkbox-2x.png )
+Rails.application.config.assets.precompile += %w( radio-2x.png )
+Rails.application.config.assets.precompile += %w( toggle/icon-off.png )
+Rails.application.config.assets.precompile += %w( toggle/icon-on.png )
+Rails.application.config.assets.precompile += %w( toggle/block-off.png )
+Rails.application.config.assets.precompile += %w( toggle/block-on.png )
+Rails.application.config.assets.precompile += %w( toggle/icon-off-2x.png )
+Rails.application.config.assets.precompile += %w( toggle/icon-on-2x.png )
+Rails.application.config.assets.precompile += %w( toggle/block-off-2x.png )
+Rails.application.config.assets.precompile += %w( toggle/block-on-2x.png )
+Rails.application.config.assets.precompile += %w( todo/todo.png )
+Rails.application.config.assets.precompile += %w( todo/done.png )
+Rails.application.config.assets.precompile += %w( todo/search.png )
+Rails.application.config.assets.precompile += %w( todo/todo-2x.png )
+Rails.application.config.assets.precompile += %w( todo/done-2x.png )
+Rails.application.config.assets.precompile += %w( todo/search-2x.png )
+Rails.application.config.assets.precompile += %w( video/play.png )
+Rails.application.config.assets.precompile += %w( video/play-2x.png )
+Rails.application.config.assets.precompile += %w( video/pause.png )
+Rails.application.config.assets.precompile += %w( video/pause-2x.png )
+Rails.application.config.assets.precompile += %w( video/volume-full.png )
+Rails.application.config.assets.precompile += %w( video/volume-full-2x.png )
+Rails.application.config.assets.precompile += %w( video/volume-off.png )
+Rails.application.config.assets.precompile += %w( video/volume-off-2x.png )
+Rails.application.config.assets.precompile += %w( video/fullscreen.png )
+Rails.application.config.assets.precompile += %w( video/fullscreen-2x.png )
+Rails.application.config.assets.precompile += %w( login/imac.png )
+Rails.application.config.assets.precompile += %w( login/imac-2x.png )

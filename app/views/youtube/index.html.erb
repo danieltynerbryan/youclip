@@ -1,0 +1,25 @@
+<div class="row youclip-title-row">
+	<div class="col-md-12">
+		<h1 class="text-center">YouClip</h1>
+	</div>
+</div>
+
+<div class="row input-row">
+	<div class="col-md-6 col-md-offset-3">
+		<input type="text" class="form-control" placeholder="paste a youtube video url" id="video-id">
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-primary btn-lg new-video-button" id="new-video-button">Get Video</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	$('.new-video-button').click(function() {
+		videoID = $('#video-id').val();
+		if (videoID != '') {
+			window.location.href = 'youtube/'+videoID;
+		}
+	})
+	
+</script>

@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="video-player" id="video-player">
+			<div id="player" class="player">You need Flash player 8+ and JavaScript enabled to view this video.</div>
+			<div class="video-control">
+				<button class="btn pull-left" onclick="playClip();">
+					<span class="glyphicon glyphicon-play"></span>
+				</button>
+				<div class="video-time pull-left">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= form_for @clip, :html => { :class => "form-horizontal clip" } do |f| %>
+
+	<%= f.hidden_field :youtube_id %>
+	<%= f.hidden_field :start %>
+	<%= f.hidden_field :end %>
+	
+	<div class="row" style="margin-top:20px;">
+		<div class="col-md-12">
+			<input type="hidden" class="range-slider" id="range-slider" value="190" />
+		</div>
+	</div>
+	
+	<div class="row" style="margin-top:40px;">
+		<div class="col-md-12">
+			<%= f.submit nil, :class => 'btn btn-primary' %>
+		</div>
+	</div>
+
+<% end %>
+
+<script type="text/javascript">
+	
+	var player;
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			width: '100%',
+			videoId: '<%= @clip.youtube_id %>',
+			playerVars: { 'controls': 0 },
+			events: { 'onReady': onPlayerReady }
+		});
+	}
+	
+	function playClip(){
+	    range = $('#range-slider').val().split(',');
+	    $("#clip_start").val(range[0]);
+	    $("#clip_end").val(range[1]);
+	    player.loadVideoById({
+			videoId:'<%= @clip.youtube_id %>', 
+			startSeconds:range[0], 
+			endSeconds:range[1]
+		});
+    }
+
+	function onPlayerReady(event){
+        player.setPlaybackQuality('hd720');
+        videoLength = event.target.getDuration();
+        scaleArray = new Array;
+        for ( var i = 0; i <= videoLength; i=i+30 ) {
+	        var minutes = Math.floor(i / 60);
+	        var seconds = i - minutes * 60;
+	        if (seconds == 0) {
+		        seconds = '00';
+	        }
+	        scaleArray.push(minutes+':'+seconds);
+	    }
+        $('.range-slider').jRange({
+		    from: 0,
+		    to: videoLength,
+		    step: 1,
+		    scale: scaleArray,
+		    format: '%s',
+		    width: '100%',
+		    showLabels: true,
+		    isRange: true
+		});
+		event.target.loadVideoById({
+			videoId:'<%= @clip.youtube_id %>'
+		});
+    }
+	
+</script>
