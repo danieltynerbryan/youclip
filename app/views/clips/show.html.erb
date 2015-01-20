@@ -1,6 +1,18 @@
-<div class="row youclip-title-row">
+<div class="row">
 	<div class="col-md-12">
-		<h1 class="text-center">YouClip</h1>
+		<div class="video-player" id="video-player">
+			<div id="player" class="player">You need Flash player 8+ and JavaScript enabled to view this video.</div>
+			<div class="video-control">
+				<button class="btn pull-left" onclick="playClip();">
+					<span class="glyphicon glyphicon-play"></span>
+				</button>
+				<div class="video-time pull-left">
+					<span id="video-time">00:00</span>
+					<span>&nbsp;|&nbsp;</span>
+					<%= Time.at(@clip.end - @clip.start).utc.strftime("%M:%S") %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -35,21 +47,3 @@
     }
 	
 </script>
-
-<div class="row">
-	<div class="col-md-12">
-		<div class="video-player" id="video-player">
-			<div id="player" class="player">You need Flash player 8+ and JavaScript enabled to view this video.</div>
-			<div class="video-control">
-				<button class="btn pull-left" onclick="playClip();">
-					<span class="glyphicon glyphicon-play"></span>
-				</button>
-				<div class="video-time pull-left">
-					<span id="video-time">00:00</span>
-					<span>&nbsp;|&nbsp;</span>
-					<%= Time.at(@clip.end - @clip.start).utc.strftime("%M:%S") %>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
