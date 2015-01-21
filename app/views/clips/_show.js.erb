@@ -1,5 +1,9 @@
 <%= javascript_tag do %>
 
+	function onPlayerReady(event){
+        playClip();
+    }
+    
 	function playClip(){
 		player.setPlaybackQuality('hd720');
 		player.loadVideoById({
@@ -7,15 +11,6 @@
 			startSeconds:<%= @clip.start %>, 
 			endSeconds:<%= @clip.end %>
 		});
-    }
-
-	function onPlayerReady(event){
-        playClip();
-    }
-    
-    function showTime(){
-	    time = player.getDuration();
-	    $('#video-time').innerHTML(time);
     }
     
 <% end %>

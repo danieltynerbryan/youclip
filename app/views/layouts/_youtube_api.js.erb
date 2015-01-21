@@ -9,7 +9,10 @@
 			width: '100%',
 			videoId: '<%= @clip.youtube_id %>',
 			playerVars: { 'controls': 0 },
-			events: { 'onReady': onPlayerReady }
+			events: { 
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			}
 		});
 	}
 	

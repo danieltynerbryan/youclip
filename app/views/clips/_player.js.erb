@@ -1,0 +1,36 @@
+<%= javascript_tag do %>
+
+	$(document).ready(function() {
+		$('.video-control-button').click(function(){
+			controlState = $(this).attr('id');
+			$(this).hide()
+			if (controlState == 'play'){
+				$('#pause').show();
+				$('#repeat').hide();
+				player.playVideo();
+			} else if (controlState == 'pause'){
+				$('#play').show();
+				$('#repeat').hide();
+				player.pauseVideo();
+			} else if (controlState == 'repeat'){
+				$('#pause').show();
+				$('#repeat').hide();
+				playClip();
+			}
+		})
+	})
+	
+	function onPlayerStateChange(event) {        
+        if(event.data === 0) {          
+            $('#pause').hide();
+			$('#repeat').show();
+			$('#play').hide();
+        }
+    }
+    
+     function showTime(){
+	    time = player.getDuration();
+	    $('#video-time').innerHTML(time);
+    }
+	
+<% end %>

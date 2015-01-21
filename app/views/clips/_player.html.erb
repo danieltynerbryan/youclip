@@ -3,7 +3,13 @@
 		<div class="video-player" id="video-player">
 			<div id="player" class="player">You need Flash and JavaScript enabled to view this video.</div>
 			<div class="video-control">
-				<button class="btn pull-left" onclick="playClip();">
+				<button class="btn pull-left video-control-button video-control-play" id="play" style="display: none">
+					<span class="glyphicon glyphicon-play"></span>
+				</button>
+				<button class="btn pull-left video-control-button video-control-pause" id="pause">
+					<span class="glyphicon glyphicon-pause"></span>
+				</button>
+				<button class="btn pull-left video-control-button video-control-repeat" id="repeat" style="display: none">
 					<span class="glyphicon glyphicon-repeat"></span>
 				</button>
 				<div class="video-time pull-left"></div>
@@ -11,3 +17,5 @@
 		</div>
 	</div>
 </div>
+
+<%= render 'clips/player.js' %>
