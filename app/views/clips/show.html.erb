@@ -9,6 +9,8 @@
 <div class="row">
 	<div class="col-md-12">
 		<h6 class="text-center">share</h6>
-		<h3 class="text-center share-link">youclip.herokuapp.com/clips/<%= @clip.permalink %></h3>
+		<h3 class="text-center share-link">
+			<a href="<%= heroku_link(@clip.permalink) %>"><%= @clip.permalink %></a>
+		</h3>
 	</div>	
 </div>
