@@ -4,13 +4,24 @@
 
 <%= hidden_field_tag('clip_youtube_id', @clip.youtube_id) %>
 
-<%= render 'player' %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<%= render 'player' %>
+		<div class="row margin-top-20">
+			<div class="col-md-12">
+				<h3 class="text-center share-link">
+					<a href="<%= heroku_link(@clip.permalink) %>">share clip</a>
+				</h3>
+			</div>
+			<div class="col-md-12 text-center">
+				<% @clip.tags.each do |t| %>
+					<a href="<%= tag_path(t.name) %>">#<%= t.name %></a>
+				<% end %>
+			</div>	
+		</div>
+	</div>
+</div>
 
 <div class="row">
-	<div class="col-md-12">
-		<h6 class="text-center">share</h6>
-		<h3 class="text-center share-link">
-			<a href="<%= heroku_link(@clip.permalink) %>"><%= @clip.permalink %></a>
-		</h3>
-	</div>	
+		
 </div>

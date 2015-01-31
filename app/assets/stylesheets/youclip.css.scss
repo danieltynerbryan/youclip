@@ -13,11 +13,11 @@ body {
 }
 
 .navbar-default {
-	background-color: #1ABC9C;
-	border-color: #1ABC9C;
+	background-color: #34495e; //#1ABC9C;
+	border-color: #34495e;//#1ABC9C;
 	color: #fff !important;
 	.navbar-brand {
-		color: #fff !important;
+		color: #1ABC9C !important;
 		text-decoration: none;
 	}
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .video-control {
-	height:	30px;
+	height:	40px;
 	width: 100%;
 	margin-top: -5px;
 	background-color: #34495e;	
@@ -60,12 +60,12 @@ body {
 	font: 14px/1.231 "Helvetica Neue", sans-serif !important;
 }
 
-.btn-lg {
+.btn {
 	height: 40px;
 }
 
 .input-row {
-	margin-top: 40px;
+	margin-top: 0px;
 }
 
 .margin-top-20 {
@@ -79,11 +79,22 @@ body {
 .share-link {
 	margin-top: -10px;
 	padding-top: 0;
+}
+
+.tag-cloud {
 	a {
-		color: #1ABC9C;
-		text-decoration: none;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
-	a:hover {
-		color: #16A085;
-	}
+  	.s { font-size: 12px; }
+  	.m { font-size: 24px; }
+  	.l { font-size: 36px; }
+}
+
+a {
+	color: #1ABC9C;
+	text-decoration: none !important;
+}
+a:hover {
+	color: #16A085 !important;
 }
