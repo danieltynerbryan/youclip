@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119002243) do
+ActiveRecord::Schema.define(version: 20150131221648) do
 
   create_table "clips", force: true do |t|
     t.string   "youtube_id"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20150119002243) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.string   "tag_list"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "clip_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taggings", ["clip_id"], name: "index_taggings_on_clip_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "videos", force: true do |t|
